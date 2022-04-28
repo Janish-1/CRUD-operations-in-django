@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+</head>
+<body>
+    <form action="/registerapp/register/" method="POST"> <!-- action is used to access webpage -->
+        {%csrf_token%}
+        <h1 style="color:rgb(255, 255, 255);background-color: blueviolet">Basic Registeration System</h1>
+        <marquee behaviour="" direction="">Python Batch March 2022</marquee>
+        <a href="/registerapp/search/">Search</a>
+        <label for="name">Name: </label>
+        <input type="text" name="name" id="name">  <!-- name is for connecting to database which needs to be same in views and template-->
+        <label for="email">Email: </label>
+        <input type="email" name="email" id="email">
+        <input type="submit" value="submit">
+        <input type="Reset" value="Reset">
+    </form>
+    <div>
+        <style>
+            .footer {
+              position: fixed;
+              left: 0;
+              bottom: 0;
+              width: 100%;
+              background-color: blueviolet;
+              color: white;
+              text-align: center;
+            }
+            </style>
+    </div>
+    <div class="footer">
+        <h3>Bottom Note</h3>
+    </div>
+</body>
+</html>

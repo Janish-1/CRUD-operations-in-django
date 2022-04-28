@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+</head>
+<body>
+    <h1 style="color:rgb(255, 255, 255);background-color: blueviolet">Basic Registeration System</h1>
+    <marquee behaviour="" direction="">Python Batch March 2022</marquee>
+    <form action="/registerapp/search/" method="POST">
+        {%csrf_token%}
+        <div>
+            <label for="name">Name: </label>
+            <input type="text" value = "search" id = "name" name="name">
+            <input type="submit" value="Search">
+        </div>
+    </form>
+    {% if data %}{% for value in data %} id: {{value.id}} name: {{value.name}} Email: {{value.email}}
+    <!-- if data is same as python if statement-->
+    <!-- for value in data is same as python for statment-->
+    <!-- double curly braces are for accessing the database values  and id: double curly is used to store the value in "id"--> 
+    <form action="/registerapp/search/" method="POST">
+        {%csrf_token%}
+        <input type="hidden" id="id" name='id' value="{{value.id}}">
+        <input type="Submit" value="Delete">
+    </form>
+    <form action="/registerapp/update/" method="POST">
+        {% csrf_token %}
+        <input type="hidden" id="email" name='email' value="{{value.email}}">
+        <input type="hidden" id="name" name='name' value="{{value.name}}">
+        <input type="hidden" id="id" name='id' value="{{value.id}}">
+        <input type="hidden" id="from" name='from' value="search">
+        <input type="Submit" value="update">
+    </form>
+    {%endfor%} {%endif%}
+    <div>
+        <style>
+            .footer {
+              position: fixed;
+              left: 0;
+              bottom: 0;
+              width: 100%;
+              background-color: blueviolet;
+              color: white;
+              text-align: center;
+            }
+            </style>
+    </div>
+    <div class="footer">
+        <h3>Bottom Note</h3>
+    </div>
+</body>
+</html>

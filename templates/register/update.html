@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update</title>
+</head>
+
+<body>
+    <h1 style="color:rgb(255, 255, 255);background-color: blueviolet">Basic Registeration System</h1>
+    <marquee behaviour="" direction="">Python Batch March 2022</marquee>
+    <form action="/registerapp/update/" method="POST">
+        {% csrf_token %}
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" value="{{ name }}"> <!-- database is being used to call the name of the id-->
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" value="{{email}}"> <!-- database is being to used to call the email of the id-->
+        <input type="submit" value="update"> <!-- value is shown in the input button -->
+        <input type="hidden" id="id" name='id' value="{{id}}"> <!-- hidden type is used to hide the value and show it after the 
+        previous entries have been executed -->
+        <input type="hidden" id="from" name='from' value="update">
+        <input type="Reset" value="Reset">
+    </form>
+    <div>
+        <style>
+            .footer {
+              position: fixed;
+              left: 0;
+              bottom: 0;
+              width: 100%;
+              background-color: blueviolet;
+              color: white;
+              text-align: center;
+            }
+            </style>
+    </div>
+    <div class="footer">
+        <h3>Bottom Note</h3>
+    </div>
+</body>
+
+</html>
